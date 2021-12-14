@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <%- include('partials/head'); %>
+    </head>
+    <body class="container">
+        <header>
+        <%- include('partials/header'); %>
+        </header>
+        <main>
+            <h1 class="gradient-text mt-2" style="text-align: center;"> Add a new Book to the collection</h1>
+            <div class="add_book container-lg">
+                <div class="mb-3 form-floating">
+                    <input type="text" class="form-control" id="title" placeholder="Book Title">
+                    <label for="floatingInput">Book Title</label>
+                </div>
+                <div class="mb-3 form-floating">
+                    <input type="text" class="form-control" id="author" placeholder="Book Author">
+                    <label for="floatingInput">Book Author</label>
+                </div>
+                <div class="mb-3 form-floating">
+                    <input type="text" class="form-control" id="category" placeholder="Book Category">
+                    <label for="floatingInput">Book Category</label>
+                </div>
+                <div class="mb-3 form-floating">
+                    <textarea class="form-control" placeholder="Write a description here" id="desc"></textarea>
+                    <label for="floatingTextarea">Description</label>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="handleSubmit()">Submit</button>
+            </div>
+        </main>
+        <footer>
+            <%- include('partials/footer'); %>
+        <footer>
+    </body>
+</html>

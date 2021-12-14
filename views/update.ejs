@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <%- include('partials/head'); %>
+    </head>
+    <body class="container">
+        <header>
+        <%- include('partials/header'); %>
+        </header>
+        <main>
+            <h1 class="gradient-text mt-2" style="text-align: center;"> Update An Existing Book</h1>
+            <form class="row g-3 needs-validation">
+                <div class= "container-lg" id="update_book">
+                    <div class="mb-3 form-floating input-group has-validation">
+                        <input type="text" class="form-control" id="up_title"  placeholder="Book Title" required>
+                        <label for="floatingInput">Book Title</label>
+                        <div class="invalid-feedback">
+                            Please Input a title.
+                        </div>
+                    </div>
+                    <select id="update" onchange="handleSelect()" class="form-select m-2 w-25" aria-label="Default select example">
+                        <option selected>Select An attribute to Update</option>
+                        <option value="1">Category</option>
+                        <option value="2">Author</option>
+                        <option value="3">Description</option>
+                    </select>
+                </div>
+            </form>
+        </main>
+        <footer>
+            <%- include('partials/footer'); %>
+        <footer>
+    </body>
+</html>
