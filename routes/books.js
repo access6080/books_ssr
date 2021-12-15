@@ -14,7 +14,6 @@ bookRoutes.get('/', (req, res) => {
 
 // Create a new book
 bookRoutes.post('/', (req, res) => {
-    console.log('here');
     const { title, category, description, author } = req.body;
     const data = {
         "Category": category,

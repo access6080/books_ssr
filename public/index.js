@@ -21,7 +21,7 @@ const handleSubmit = async () => {
     document.getElementById("category").value = "";
     document.getElementById("desc").value = "";
 
-    location.replace('/library');
+    // location.replace('/library');
 }
 
 const openLibrary = async () => {
@@ -130,15 +130,15 @@ const openLibrary = async () => {
 const deleteButton = '<img  style="width: 1em;" alt="svgImg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNDgiIGhlaWdodD0iNDgiCnZpZXdCb3g9IjAgMCA0OCA0OCIKc3R5bGU9IiBmaWxsOiMwMDAwMDA7Ij48cGF0aCBkPSJNIDIwLjUgNCBBIDEuNTAwMTUgMS41MDAxNSAwIDAgMCAxOS4wNjY0MDYgNiBMIDE0LjY0MDYyNSA2IEMgMTIuNzk2NjI1IDYgMTEuMDg2NDUzIDYuOTE2MjE4OCAxMC4wNjQ0NTMgOC40NDkyMTg4IEwgNy42OTcyNjU2IDEyIEwgNy41IDEyIEEgMS41MDAxNSAxLjUwMDE1IDAgMSAwIDcuNSAxNSBMIDQwLjUgMTUgQSAxLjUwMDE1IDEuNTAwMTUgMCAxIDAgNDAuNSAxMiBMIDQwLjMwMjczNCAxMiBMIDM3LjkzNTU0NyA4LjQ0OTIxODggQyAzNi45MTM1NDcgNi45MTYyMTg3IDM1LjIwMjM3NSA2IDMzLjM1OTM3NSA2IEwgMjguOTMzNTk0IDYgQSAxLjUwMDE1IDEuNTAwMTUgMCAwIDAgMjcuNSA0IEwgMjAuNSA0IHogTSA4Ljk3MjY1NjIgMTggTCAxMS4xMjUgMzguMDg1OTM4IEMgMTEuNDI1IDQwLjg4NzkzNyAxMy43NzU3NSA0MyAxNi41OTM3NSA0MyBMIDMxLjQwNjI1IDQzIEMgMzQuMjIzMjUgNDMgMzYuNTc0IDQwLjg4NzkzOCAzNi44NzUgMzguMDg1OTM4IEwgMzkuMDI3MzQ0IDE4IEwgOC45NzI2NTYyIDE4IHoiPjwvcGF0aD48L3N2Zz4="/>';
 
 const handleDelete = async (event) => {
-  const cardId = event.path[4].id;
+    const cardId = event.path[4].id;
 
-  const book = Object.entries(BOOKS)[cardId];
+    const book = Object.entries(BOOKS)[cardId];
+    const cardToDelete = document.getElementById(cardId);
+    
+    cardToDelete.remove();
+    await axios.delete(`/books/${book[0]}`);
 
-  console.log(book[0])
-
-  await axios.delete(`/books/${book[0]}`);
-
-  location.reload();
+//   location.reload();
 }
 
 const handleSelect = () => {
@@ -210,7 +210,7 @@ const handleUpdate = async () => {
 
     await axios.patch(`/books/${title}`, data);
 
-    location.replace('/library');
+    // location.replace('/library');
 }
 
 
